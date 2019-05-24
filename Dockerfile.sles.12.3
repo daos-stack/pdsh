@@ -24,8 +24,8 @@ RUN zypper --non-interactive update
 RUN zypper --non-interactive install make rpm-build curl createrepo git    \
                                      lsb-release autoconf automake libtool \
                                      ca-certificates-mozilla
-# scons
-RUN zypper --non-interactive install fdupes
+# pdsh
+RUN zypper --non-interactive install readline-devel pam-devel
 
 # force an upgrade to get any newly built RPMs
 ARG CACHEBUST=1
