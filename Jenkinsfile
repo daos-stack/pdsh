@@ -7,7 +7,7 @@ pipeline {
                 stage('RPM Lint') {
                     agent {
                         dockerfile {
-                            filename 'Dockerfile.centos:7'
+                            filename 'Dockerfile.centos.7'
                             label 'docker_runner'
                             additionalBuildArgs  '--build-arg UID=$(id -u)'
                             args  '--group-add mock --cap-add=SYS_ADMIN --privileged=true'
@@ -51,7 +51,7 @@ pipeline {
                         }
                     }
                 }
-                stage('Build on Ubuntu 16.04') {
+                stage('Build on Ubuntu 18.04') {
                     agent {
                         label 'docker_runner'
                     }
